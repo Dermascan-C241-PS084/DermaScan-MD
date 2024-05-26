@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">DermaScan</string>
+    <string name="title_menu_1">Kurikulum Standar Industri Global</string>
+    <string name="title_menu_2">Belajar Fleksibel Sesuai Jadwal Anda</string>
+    <string name="title_menu_3">Code Review dari Developer Expert</string>
+    <string name="title_menu_4">Alumni Terpercaya di Berbagai Perusahaan</string>
+    <string name="desc_menu_1">Kurikulum dikembangkan bersama perusahaan dan pemilik teknologi dunia sesuai kebutuhan industri terkini.</string>
+    <string name="desc_menu_2">Belajar kapan pun, di mana pun, secara mandiri. Bebas memilih kelas sesuai minat belajar. Akses seumur hidup ke kelas dan forum diskusi setelah lulus.</string>
+    <string name="desc_menu_3">Validasi skill Anda melalui 1-on-1 Professional Code Review yang diberikan langsung oleh Developer Expert.</string>
+    <string name="desc_menu_4">Sertifikat yang membuktikan pengetahuan fundamental beserta keterampilan nyata yang diinginkan perusahaan global.</string>
+    <string name="learn_now">Belajar Sekarang</string>
+    <string name="btn_mulai">Mulai</string>
+    <string name="teks_openingapps_1">Capture, Detect, Heal</string>
+    <string name="teks_openingapps2">Lakukan Dimanapun dan Kapanpun</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="tittle_login">Welcome Back ! </string>
+    <string name="subtittle_login">Masukan Terlebih Dahulu Data Anda</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="error_empty_password">Password cannot be empty</string>
+    <string name="error_password_more_8">Password must be at least 8 characters long</string>
+    <string name="tittle_register">Hi There \nRegister to Continue !  </string>
+    <string name="name">Name</string>
+    <string name="tittle_welcome_page">Selamat Menikmati New Experience</string>
+    <string name="welcame_massage">Jelajahi DermaScan App</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="tittle_buttom_scan">Scan</string>
+    <string name="tittle_buttom_Article">Article</string>
+    <string name="tittle_buttom_history">History</string>
+    <string name="tittle_buttom_profil">Profile</string>
+</resources>
