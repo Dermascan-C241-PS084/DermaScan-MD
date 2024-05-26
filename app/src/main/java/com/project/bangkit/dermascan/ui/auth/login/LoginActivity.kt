@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.project.bangkit.dermascan.databinding.ActivityLoginBinding
-import com.project.bangkit.dermascan.ui.home.HomeActivity
+import com.project.bangkit.dermascan.ui.MainActivity
 
 class LoginActivity : AppCompatActivity() {
 //    private val viewModel by viewModels<LoginViewModel> {
@@ -79,7 +79,7 @@ class LoginActivity : AppCompatActivity() {
 
     private fun setUpAction(){
         binding.loginButton.setOnClickListener {
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
         }
     }
 //

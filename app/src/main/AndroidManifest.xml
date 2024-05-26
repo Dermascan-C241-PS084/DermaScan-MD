@@ -10,9 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DermaScan">
         <activity
-            android:name=".ui.home.HomeActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home" />
+            android:name=".ui.MainActivity"
+            android:exported="false" />
+
         <activity
             android:name=".ui.opening.OpeningAppsActivity"
             android:exported="false" />
