@@ -57,13 +57,13 @@
         app:layout_constraintEnd_toEndOf="@+id/logoMenu2"
         app:layout_constraintStart_toStartOf="@+id/logoMenu2"
         app:layout_constraintTop_toBottomOf="@+id/logoMenu2"
-        android:text="@string/teks_openingapps2" />
+        android:text="@string/contain_openingapps_3" />
 
     <ImageView
         android:id="@+id/logoMenu3"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:src="@drawable/image_code_review"
+        android:src="@drawable/layout3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,27 +82,14 @@
         app:layout_constraintEnd_toEndOf="@+id/logoMenu3"
         app:layout_constraintStart_toStartOf="@+id/logoMenu3"
         app:layout_constraintTop_toBottomOf="@+id/logoMenu3"
-        android:text="@string/title_menu_3" />
+        android:text="@string/contain_openingapps_3" />
 
-    <TextView
-        android:id="@+id/descMenu3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/titleMenu3"
-        app:layout_constraintStart_toStartOf="@+id/titleMenu3"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu3"
-        android:text="@string/desc_menu_3" />
 
     <ImageView
         android:id="@+id/logoMenu4"
         android:layout_width="0dp"
         android:layout_height="300dp"
-        android:src="@drawable/image_alumni_terpercaya"
+        android:src="@drawable/layout4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -121,21 +108,8 @@
         app:layout_constraintEnd_toEndOf="@+id/logoMenu4"
         app:layout_constraintStart_toStartOf="@+id/logoMenu4"
         app:layout_constraintTop_toBottomOf="@+id/logoMenu4"
-        android:text="@string/title_menu_4" />
+        android:text="@string/contain_openingapps4" />
 
-    <TextView
-        android:id="@+id/descMenu4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center_horizontal"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/titleMenu4"
-        app:layout_constraintStart_toStartOf="@+id/titleMenu4"
-        app:layout_constraintTop_toBottomOf="@+id/titleMenu4"
-        android:text="@string/desc_menu_4" />
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu1"

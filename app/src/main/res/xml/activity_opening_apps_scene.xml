@@ -9,7 +9,7 @@
         motion:duration="1000">
     </Transition>
 
-    <ConstraintSet android:id="@+id/start">
+    <ConstraintSet>
         <Constraint
             android:id="@+id/imageView"
             android:layout_width="0dp"
@@ -43,7 +43,7 @@
         <Constraint
             android:id="@+id/menu1"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_marginStart="32dp"
             android:layout_marginBottom="16dp"
             motion:layout_constraintBottom_toBottomOf="parent"
@@ -59,7 +59,7 @@
             motion:layout_constraintEnd_toStartOf="@+id/menu3"
             motion:layout_constraintStart_toEndOf="@+id/menu1"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             motion:layout_constraintBottom_toBottomOf="@+id/menu1"
             motion:layout_constraintVertical_bias="0.0"
             motion:layout_constraintHorizontal_bias="0.5"
@@ -73,7 +73,7 @@
             motion:layout_constraintEnd_toStartOf="@+id/menu4"
             motion:layout_constraintStart_toEndOf="@+id/menu2"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             motion:layout_constraintBottom_toBottomOf="@+id/menu2"
             motion:layout_constraintVertical_bias="0.0"
             motion:layout_constraintHorizontal_bias="0.5"
@@ -87,7 +87,7 @@
             motion:layout_constraintEnd_toEndOf="parent"
             motion:layout_constraintStart_toEndOf="@+id/menu3"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             motion:layout_constraintBottom_toBottomOf="@+id/menu3"
             motion:layout_constraintVertical_bias="0.0"
             android:layout_marginEnd="32dp"

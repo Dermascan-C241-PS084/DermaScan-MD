@@ -5,41 +5,40 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.project.bangkit.dermascan.R
-import com.project.bangkit.dermascan.ui.fragment.ArticleFragment
-import com.project.bangkit.dermascan.ui.fragment.HistoryFragment
+import com.project.bangkit.dermascan.databinding.ActivityMainBinding
+import com.project.bangkit.dermascan.ui.fragment.Article
+import com.project.bangkit.dermascan.ui.fragment.History
 import com.project.bangkit.dermascan.ui.fragment.HomeFragment
-import com.project.bangkit.dermascan.ui.fragment.ProfileFragment
+import com.project.bangkit.dermascan.ui.fragment.Profile
 
 class MainActivity: AppCompatActivity() {
 
     private lateinit var navview : BottomNavigationView
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        navview=findViewById(R.id.nav_view)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         replace(HomeFragment())
 
-        navview.setOnItemReselectedListener {
+        binding.navView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> replace(HomeFragment())
-                R.id.navigation_article -> replace(ArticleFragment())
-                R.id.navigation_history -> replace(HistoryFragment())
-                R.id.navigation_profile -> replace(ProfileFragment())
-
+                R.id.navigation_article -> replace(Article())
+                R.id.navigation_history -> replace(History())
+                R.id.navigation_profile -> replace(Profile())
             }
             true
         }
-
     }
 
-    private fun replace(fragment: Fragment){
-        val fragmenManager=supportFragmentManager
-        val fragmentTransaction = fragmenManager.beginTransaction()
+    private fun replace(fragment: Fragment) {
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.navhost, fragment)
         fragmentTransaction.commit()
-
     }
 
 }
