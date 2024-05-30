@@ -7,7 +7,7 @@
 
             <!-- Warna dan lebar garis tepi -->
             <stroke
-                android:width="2dp"
+                android:width="4dp"
                 android:color="@color/purple_200" />
 
             <!-- Sudut bulat -->

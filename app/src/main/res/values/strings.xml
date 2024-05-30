@@ -41,5 +41,7 @@
     <string name="slogan">Capture, Detect, Heal</string>
     <string name="article_home_teks">Click here! To get interesting information about skin</string>
     <string name="read_more">Read More</string>
-    tambahin di string sa
+    <string name="gallery">Galeri</string>
+    <string name="camera">Camera</string>
+    <string name="analyze">Analyze</string>
 </resources>
