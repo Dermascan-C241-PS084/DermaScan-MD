@@ -1,51 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.Profile">
+    android:background="@android:color/white">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="@color/color_primary"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/iv_logo"
-            android:layout_width="128dp"
-            android:layout_height="43dp"
-            android:layout_marginEnd="12dp"
-            android:src="@drawable/logo_team"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.529" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <!-- Header -->
     <RelativeLayout
-        android:id="@+id/relativeLayout4"
+        android:id="@+id/header"
         android:layout_width="match_parent"
-        android:gravity="center"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+        android:layout_height="56dp"
+        android:background="#001848">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Profile Fragment"
-            android:textSize="26dp"
-            android:textStyle="bold"/>
+        <!-- App Logo -->
+        <ImageView
+            android:id="@+id/app_logo"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/logo_team" />
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Profile Image CardView -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/DermaScanLogo" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- Name TextView -->
+    <TextView
+        android:id="@+id/profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Esa Surya Anggraini"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <!-- Email TextView -->
+    <TextView
+        android:id="@+id/profile_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="anggrainiesa2@gmail.com"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <!-- Edit Profile Button -->
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_email"
+        android:layout_margin="12dp"
+        android:background="@drawable/custom_button_bg"
+        android:text="Edit Profile"
+        android:textColor="@android:color/white"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:padding="12dp" />
+
+    <!-- About Us Button -->
+    <Button
+        android:id="@+id/btn_about_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_edit_profile"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/custom_button_bg"
+        android:text="About Us"
+        android:textColor="@android:color/white"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:padding="12dp" />
+
+    <!-- Logout Button -->
+    <Button
+        android:id="@+id/btn_logout_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_about_us"
+        android:layout_marginTop="26dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/card_radius"
+        android:text="Logout"
+        android:textColor="@android:color/holo_blue_dark"
+        android:drawableRight="@drawable/ic_logout"
+        android:padding="12dp"/>
+</RelativeLayout>
