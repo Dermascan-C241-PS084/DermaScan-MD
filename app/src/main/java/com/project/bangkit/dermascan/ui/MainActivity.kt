@@ -1,5 +1,6 @@
 package com.project.bangkit.dermascan.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import com.project.bangkit.dermascan.ui.fragment.Article
 import com.project.bangkit.dermascan.ui.fragment.History
 import com.project.bangkit.dermascan.ui.fragment.HomeFragment
 import com.project.bangkit.dermascan.ui.fragment.Profile
+import com.project.bangkit.dermascan.ui.scan.ScanActivity
 
 class MainActivity: AppCompatActivity() {
 
@@ -23,6 +25,11 @@ class MainActivity: AppCompatActivity() {
 
         replace(HomeFragment())
 
+        binding.btmBarScan.setOnClickListener {
+            Intent(this, ScanActivity::class.java).also {
+                startActivity(it)
+            }
+        }
         binding.navView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> replace(HomeFragment())
@@ -32,6 +39,7 @@ class MainActivity: AppCompatActivity() {
             }
             true
         }
+
     }
 
     private fun replace(fragment: Fragment) {

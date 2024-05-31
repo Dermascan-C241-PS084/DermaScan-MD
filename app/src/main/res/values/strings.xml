@@ -36,11 +36,13 @@
     <string name="contain_openingapps_3">Dengan Teknologi Artificial Intelligence, Aplikasi ini dapat mengenali berbagai jenis penyakit kulit</string>
     <string name="contain_openingapps4">Dapatkan saran perawatan dan tindakan lebih lanjut berdasarkan hasil pemindaian</string>
     <string name="article_home">Article</string>
-    <string name="paralax_add_image_desc">You Can Scan Your Skin \nProblems and get advice</string>
+    <string name="paralax_add_image_desc">You Can Scan Your Skin \n Problems and get advice</string>
     <string name="slogan">Capture, Detect, Heal</string>
     <string name="article_home_teks">Click here! To get interesting information about skin</string>
     <string name="read_more">Read More</string>
     <string name="gallery">Galeri</string>
     <string name="camera">Camera</string>
     <string name="analyze">Analyze</string>
+    <string name="welcome_user">Hai Alifan</string>
+    <string name="protect_your_skin">Protect Your Skin</string>
 </resources>
