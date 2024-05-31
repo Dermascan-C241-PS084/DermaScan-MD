@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/color_primary">
+
+        <!-- Back Button -->
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/baseline_arrow_back_24" />
+
+    </RelativeLayout>
+
+    <!-- About Us Title -->
+    <TextView
+        android:id="@+id/about_us_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="About Us"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/color_primary" />
+
+    <!-- Logo Image -->
+    <ImageView
+        android:id="@+id/about_us_logo"
+        android:layout_width="260dp"
+        android:layout_height="160dp"
+        android:layout_below="@id/about_us_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/dermascanlogo" />
+
+    <!-- Description Text -->
+    <TextView
+        android:id="@+id/about_us_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/about_us_logo"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="     This Application Can Help Users To Automatically Analyze The User's Potential Skin Diseases Through Photos Of Their Skin Condition. This Fast And Accurate Assessment Provides Valuable Initial Information, Empowering Users To Make Informed Decisions Regarding Their Skin Care.\n\n     We Believe That Everyone Deserves Easy And Fast Access To Diagnosis And Solutions For Skin Diseases. Our Goal Is To Make A Significant Contribution To The Health Sector By Ensuring That People Gain A Better Understanding Of Their Skin Conditions And Can Take Appropriate Action. With A Shared Vision, We Can Make This Application A Reality."
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:lineSpacingMultiplier="1.2" />
+</RelativeLayout>
