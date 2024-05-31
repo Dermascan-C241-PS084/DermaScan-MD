@@ -12,6 +12,8 @@
         <activity
             android:name=".ui.scan.ScanActivity"
             android:exported="false" />
+        <activity android:name=".ui.AboutUsActivity"
+            android:exported="false"/>
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />

@@ -18,19 +18,16 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class HomeFragment : Fragment() {
-    private var param1: String? = null
-    private var param2: String? = null
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//        arguments?.let {
+//            param1 = it.getString(ARG_PARAM1)
+//            param2 = it.getString(ARG_PARAM2)
+//        }
+//    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,10 +52,7 @@ class HomeFragment : Fragment() {
         // Set onClickListener for the scan button
         binding.iButtonScan.setOnClickListener {
             // Handle the button click event
-            Intent(requireContext(), ScanActivity::class.java).also {
-                startActivity(it)
-            }
-            // You can add your scan logic here
+            startActivity(Intent(requireContext(), ScanActivity::class.java))
         }
 
         // Set text for tv_name_account

@@ -4,18 +4,16 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.project.bangkit.dermascan.R
 import com.project.bangkit.dermascan.databinding.ActivityMainBinding
-import com.project.bangkit.dermascan.ui.fragment.Article
-import com.project.bangkit.dermascan.ui.fragment.History
+import com.project.bangkit.dermascan.ui.fragment.ArticleFragment
+import com.project.bangkit.dermascan.ui.fragment.HistoryFragment
 import com.project.bangkit.dermascan.ui.fragment.HomeFragment
-import com.project.bangkit.dermascan.ui.fragment.Profile
+import com.project.bangkit.dermascan.ui.fragment.ProfileFragment
 import com.project.bangkit.dermascan.ui.scan.ScanActivity
 
 class MainActivity: AppCompatActivity() {
 
-    private lateinit var navview : BottomNavigationView
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,12 +28,15 @@ class MainActivity: AppCompatActivity() {
                 startActivity(it)
             }
         }
+        binding.navView.setOnClickListener {
+            replace(HomeFragment())
+        }
         binding.navView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> replace(HomeFragment())
-                R.id.navigation_article -> replace(Article())
-                R.id.navigation_history -> replace(History())
-                R.id.navigation_profile -> replace(Profile())
+                R.id.navigation_article -> replace(ArticleFragment())
+                R.id.navigation_history -> replace(HistoryFragment())
+                R.id.navigation_profile -> replace(ProfileFragment())
             }
             true
         }
