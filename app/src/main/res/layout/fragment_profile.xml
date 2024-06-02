@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragment.ProfileFragment"
+    tools:context=".ui.profil.ProfileFragment"
     android:background="@android:color/white">
 
     <!-- Header -->
@@ -39,7 +39,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/baseline_profile" />
+            android:background="@drawable/transparent"
+            android:src="@drawable/baseline_person_24" />
     </androidx.cardview.widget.CardView>
 
     <!-- Name TextView -->
@@ -73,12 +74,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/profile_email"
-        android:layout_margin="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
         android:background="@drawable/custom_button_bg"
-        android:text="Edit Profile"
-        android:textColor="@android:color/white"
         android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:text="Edit Profile"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white" />
 
     <!-- About Us Button -->
     <Button
@@ -86,13 +93,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_edit_profile"
-        android:layout_marginRight="12dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
         android:background="@drawable/custom_button_bg"
-        android:text="About Us"
-        android:textColor="@android:color/white"
         android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="12dp" />
+        android:padding="12dp"
+        android:text="About Us"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/white" />
 
     <!-- Logout Button -->
     <Button
@@ -100,12 +108,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/btn_about_us"
-        android:layout_marginTop="26dp"
         android:layout_marginLeft="12dp"
+        android:layout_marginTop="26dp"
         android:layout_marginRight="12dp"
         android:background="@drawable/card_radius"
-        android:text="Logout"
-        android:textColor="@android:color/holo_blue_dark"
         android:drawableRight="@drawable/ic_logout"
-        android:padding="12dp"/>
+        android:padding="12dp"
+        android:text="Logout"
+        android:textAlignment="textStart"
+        android:textColor="@android:color/holo_blue_dark" />
 </RelativeLayout>

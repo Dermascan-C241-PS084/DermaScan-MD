@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.editprofil.EditProfileActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/color_primary"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/btn_back_edit_profile"
+                android:layout_width="39dp"
+                android:paddingRight="15dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="4dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/baseline_arrow_back_24" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:letterSpacing="0.02"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Change your profile"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:textColor="#78828A"
+            android:text="@string/update_what_you_need"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="296dp"
+            android:layout_height="212dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:src="@drawable/baseline_edit_profile" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/name"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginStart="20dp"
+            android:textSize="14sp"/>
+
+
+        <EditText
+            android:id="@+id/cv_name_business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_ed"
+            android:hint="@string/name" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="13dp"
+            android:text="Email"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginStart="20dp"
+            android:textSize="14sp"/>
+
+        <com.project.bangkit.dermascan.ui.customview.EmailView
+            android:id="@+id/cv_location_Business"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:letterSpacing="0.02"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_ed"
+            android:hint="Fill your email " />
+
+
+        <Button
+            android:id="@+id/btn_change_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="38dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginHorizontal="20dp"
+            android:fontFamily="@font/poppins_light"
+            android:background="@drawable/card_radius"
+            app:backgroundTint="@color/color_primary"
+            android:text="Save"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,4 +1,4 @@
-package com.project.bangkit.dermascan.ui.scan
+package com.project.bangkit.dermascan.ui.detection
 
 import android.content.Intent
 import android.os.Bundle

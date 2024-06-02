@@ -1,4 +1,4 @@
-package com.project.bangkit.dermascan.ui
+package com.project.bangkit.dermascan.ui.aboutus
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

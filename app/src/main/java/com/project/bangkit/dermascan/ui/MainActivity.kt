@@ -6,11 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.project.bangkit.dermascan.R
 import com.project.bangkit.dermascan.databinding.ActivityMainBinding
-import com.project.bangkit.dermascan.ui.fragment.ArticleFragment
-import com.project.bangkit.dermascan.ui.fragment.HistoryFragment
-import com.project.bangkit.dermascan.ui.fragment.HomeFragment
-import com.project.bangkit.dermascan.ui.fragment.ProfileFragment
-import com.project.bangkit.dermascan.ui.scan.ScanActivity
+import com.project.bangkit.dermascan.ui.article.ArticleFragment
+import com.project.bangkit.dermascan.ui.history.HistoryFragment
+import com.project.bangkit.dermascan.ui.home.HomeFragment
+import com.project.bangkit.dermascan.ui.profil.ProfileFragment
+import com.project.bangkit.dermascan.ui.detection.ScanActivity
 
 class MainActivity: AppCompatActivity() {
 

@@ -10,10 +10,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DermaScan">
         <activity
-            android:name=".ui.scan.ScanActivity"
+            android:name=".ui.editprofil.EditProfileActivity"
             android:exported="false" />
-        <activity android:name=".ui.AboutUsActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".ui.detail_history.DetailHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detection.ResultActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.detection.ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.aboutus.AboutUsActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />

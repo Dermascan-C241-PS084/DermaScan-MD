@@ -45,4 +45,15 @@
     <string name="analyze">Analyze</string>
     <string name="welcome_user">Hai Alifan</string>
     <string name="protect_your_skin">Protect Your Skin</string>
+    <string name="history_result">Result : </string>
+    <string name="history_date">Date : </string>
+    <string name="check_your_history">Check Your History</string>
+    <string name="title_article">title</string>
+    <string name="published_date">published_date</string>
+    <string name="result_detection">result</string>
+    <string name="hasil_prediction">Hasil Prediction</string>
+    <string name="history_advice">Advice :</string>
+    <string name="advice_detection">advice</string>
+    <string name="about_us_teks">This Application Can Help Users To Automatically Analyze The User\'s Potential Skin Diseases Through Photos Of Their Skin Condition. This Fast And Accurate Assessment Provides Valuable Initial Information, Empowering Users To Make Informed Decisions Regarding Their Skin Care.\n\n We Believe That Everyone Deserves Easy And Fast Access To Diagnosis And Solutions For Skin Diseases. Our Goal Is To Make A Significant Contribution To The Health Sector By Ensuring That People Gain A Better Understanding Of Their Skin Conditions And Can Take Appropriate Action. With A Shared Vision, We Can Make This Application A Reality.</string>
+    <string name="update_what_you_need">Update what you need</string>
 </resources>
