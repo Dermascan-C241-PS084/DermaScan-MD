@@ -10,7 +10,7 @@
     <string name="desc_menu_4">Sertifikat yang membuktikan pengetahuan fundamental beserta keterampilan nyata yang diinginkan perusahaan global.</string>
     <string name="learn_now">Belajar Sekarang</string>
     <string name="btn_mulai">Mulai</string>
-    <string name="teks_openingapps_1">Capture, Detect, Heal</string>
+    <string name="teks_openingapps_1">Capture, Detect, Check Your Skin</string>
     <string name="teks_openingapps2">Lakukan Dimanapun dan Kapanpun</string>
     <string name="login">Login</string>
     <string name="signup">SignUp</string>
@@ -56,4 +56,7 @@
     <string name="advice_detection">advice</string>
     <string name="about_us_teks">This Application Can Help Users To Automatically Analyze The User\'s Potential Skin Diseases Through Photos Of Their Skin Condition. This Fast And Accurate Assessment Provides Valuable Initial Information, Empowering Users To Make Informed Decisions Regarding Their Skin Care.\n\n We Believe That Everyone Deserves Easy And Fast Access To Diagnosis And Solutions For Skin Diseases. Our Goal Is To Make A Significant Contribution To The Health Sector By Ensuring That People Gain A Better Understanding Of Their Skin Conditions And Can Take Appropriate Action. With A Shared Vision, We Can Make This Application A Reality.</string>
     <string name="update_what_you_need">Update what you need</string>
+    <string name="dialog_icon">Dialog Icon</string>
+    <string name="read_the_article">Read The Article</string>
+    <string name="decs">Decs</string>
 </resources>
