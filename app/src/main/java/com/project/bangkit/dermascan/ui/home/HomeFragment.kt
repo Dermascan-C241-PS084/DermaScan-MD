@@ -5,14 +5,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.project.bangkit.dermascan.databinding.FragmentHomeBinding
 import com.project.bangkit.dermascan.ui.detection.ScanActivity
+import com.project.bangkit.dermascan.ui.profil.ProfileViewModel
 
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
+
     private val binding get() = _binding!!
+    private lateinit var viewModel: ProfileViewModel
+
 
 
     override fun onCreateView(
@@ -20,6 +26,13 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+
+        viewModel.user.observe(viewLifecycleOwner) { user ->
+            binding.tvNameAccount.text = "Hi, ${user.name}"
+
+        }
+
         return binding.root
     }
 
@@ -40,9 +53,20 @@ class HomeFragment : Fragment() {
             // Handle the button click event
             startActivity(Intent(requireContext(), ScanActivity::class.java))
         }
+        binding.btLogout.setOnClickListener {
+            // Handle the button click event
+            AlertDialog.Builder(requireContext()).apply {
+                setTitle("Logout")
+                setMessage("Are you sure you want to logout?")
+                setPositiveButton("Logout") { _, _ ->
+                    viewModel.logout()
+                }
+                setNegativeButton("Cancel", null)
+                create()
+                show()
+            }
+        }
 
-        // Set text for tv_name_account
-//        binding.tvNameAccount.text = getString(R.string.welcome_user)
     }
 
     override fun onDestroyView() {

@@ -59,4 +59,5 @@
     <string name="dialog_icon">Dialog Icon</string>
     <string name="read_the_article">Read The Article</string>
     <string name="decs">Decs</string>
+    <string name="loading">loading</string>
 </resources>

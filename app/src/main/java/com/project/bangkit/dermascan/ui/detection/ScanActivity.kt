@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.project.bangkit.dermascan.databinding.ActivityScanBinding
-import com.project.bangkit.dermascan.ui.MainActivity
+import com.project.bangkit.dermascan.ui.main.MainActivity
 
 class ScanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityScanBinding

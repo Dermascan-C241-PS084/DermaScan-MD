@@ -31,13 +31,18 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="80dp"
-        app:cardBackgroundColor="@android:color/white"
+        app:cardBackgroundColor="@color/color_primary"
         app:cardCornerRadius="50dp"
         app:cardElevation="4dp">
 
-        <ImageView
+        <TextView
+            android:id="@+id/profile_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:text="@string/name"
+            android:gravity="center"
             android:scaleType="centerCrop"
             android:background="@drawable/transparent"
             android:src="@drawable/baseline_person_24" />
