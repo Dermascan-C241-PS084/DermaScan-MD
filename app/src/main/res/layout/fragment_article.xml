@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+<!--
     <TextView
         android:id="@+id/title_article_pasif"
         android:layout_width="match_parent"
@@ -21,13 +21,46 @@
         android:fontFamily="@font/poppins_semibold"
         android:textSize="18sp"
         android:textColor="@color/black"/>
+-->
+        <!-- Header Layout -->
+        <RelativeLayout
+            android:id="@+id/headerArtikel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="#0A0E32"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:src="@drawable/logo_team"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+        </RelativeLayout>
+
+        <!-- Title Text -->
+        <TextView
+            android:id="@+id/judulArtikel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:text="Article"
+            android:textColor="#0A0E32"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerArtikel" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_article"
         android:layout_width="match_parent"
         android:layout_height="630dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintTop_toBottomOf="@id/title_article_pasif"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/judulArtikel"
         android:overScrollMode="never"
         android:scrollbarSize="0dp"
         android:scrollbars="vertical"

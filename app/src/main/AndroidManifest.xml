@@ -12,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DermaScan">
         <activity
+            android:name=".ui.article.Article5Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.article.Article4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.article.Article3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.article.Article2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.article.Article1Activity"
+            android:exported="false" />
+        <activity
             android:name=".ui.editprofil.EditProfileActivity"
             android:exported="false" />
         <activity
