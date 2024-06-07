@@ -1,47 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.article.Article4Activity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:background="@color/color_primary"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
 
-        <!-- Title Text -->
-        <TextView
-            android:id="@+id/titleArticle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="@string/title_article4"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="#0A0E32"/>
-
-        <!-- Article Image -->
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/artikel4"
-            android:scaleType="centerCrop"
-            android:contentDescription="Article Image"
-            android:layout_marginBottom="16dp"
-            android:layout_margin="16dp"/>
-
-        <!-- Article Text Content -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/desc_article4"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:lineSpacingMultiplier="1.2"
-            android:layout_margin="16dp"/>
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="51dp"
+            android:layout_height="35dp"
+            android:background="@drawable/transparent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/baseline_arrow_back_24" />
 
     </LinearLayout>
 
-</ScrollView>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Title Text -->
+            <TextView
+                android:id="@+id/titleArticle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/title_article4"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="#0A0E32"/>
+
+            <!-- Article Image -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/artikel4"
+                android:scaleType="centerCrop"
+                android:contentDescription="Article Image"
+                android:layout_marginBottom="16dp"
+                android:layout_margin="16dp"/>
+
+            <!-- Article Text Content -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/desc_article4"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:lineSpacingMultiplier="1.2"
+                android:layout_margin="16dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

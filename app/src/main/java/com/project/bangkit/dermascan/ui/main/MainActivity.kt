@@ -36,11 +36,14 @@ class MainActivity: AppCompatActivity() {
         viewModel.getSession().observe(this) { user ->
             if (!user.isLogin) {
                 startActivity(Intent(this, SplashScreenActivityclass::class.java))
-
             }
         }
 
-        replace(HomeFragment())
+        if (savedInstanceState == null) {
+            replace(HomeFragment())
+        } else {
+            binding.navView.selectedItemId = savedInstanceState.getInt("selectedItemId")
+        }
 
         setupView()
 
@@ -51,9 +54,6 @@ class MainActivity: AppCompatActivity() {
                 startActivity(it)
             }
         }
-        binding.navView.setOnClickListener {
-            replace(HomeFragment())
-        }
         binding.navView.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> replace(HomeFragment())
@@ -63,8 +63,11 @@ class MainActivity: AppCompatActivity() {
             }
             true
         }
+    }
 
-
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("selectedItemId", binding.navView.selectedItemId)
     }
 
     private fun replace(fragment: Fragment) {
@@ -102,5 +105,4 @@ class MainActivity: AppCompatActivity() {
             dialogLoading = null
         }
     }
-
 }

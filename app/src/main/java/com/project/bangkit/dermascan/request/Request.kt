@@ -14,3 +14,9 @@ data class RequestLogin(
 	val password: String
 )
 
+data class RequestEditProfile(
+
+	val name: String,
+	val password: String
+)
+

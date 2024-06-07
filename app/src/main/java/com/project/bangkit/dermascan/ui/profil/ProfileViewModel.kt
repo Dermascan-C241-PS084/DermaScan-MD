@@ -6,10 +6,16 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.project.bangkit.dermascan.config.ApiConfig
+import com.project.bangkit.dermascan.data.pref.UserModel
 import com.project.bangkit.dermascan.data.pref.UserPreference
 import com.project.bangkit.dermascan.data.pref.dataStore
-import kotlinx.coroutines.flow.first
+import com.project.bangkit.dermascan.request.RequestEditProfile
+import com.project.bangkit.dermascan.response.RegisterResponse
 import kotlinx.coroutines.launch
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class ProfileViewModel(application: Application) : AndroidViewModel(application) {
     private val preferences = UserPreference.getInstance(application.dataStore)
@@ -22,24 +28,32 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     private val _statusMessage = MutableLiveData<String>()
     val statusMessage: LiveData<String> = _statusMessage
 
-    private val _isSaved = MutableLiveData<Boolean>()
-    val isSaved: LiveData<Boolean> = _isSaved
+    private val _editResponse = MutableLiveData<RegisterResponse?>()
+    val editResponse: LiveData<RegisterResponse?> = _editResponse
 
-    fun updateProfile(newName: String, newEmail: String) {
+
+    fun editProfile(userId: String, requestEditProfile: RequestEditProfile) {
         _isLoading.value = true
-        viewModelScope.launch {
-            val user = preferences.getSession().first()
-            if (newName != user.name || newEmail != user.token) {
-                val updatedUser = user.copy(name = newName, email = newEmail)
-                preferences.saveSession(updatedUser)
-                _statusMessage.value = "Update successful"
-                _isSaved.value = true
-            } else {
-                _statusMessage.value = "New data must be different from the old data"
-                _isSaved.value = false
+        val api = ApiConfig.getApiService().editProfile(userId, requestEditProfile.name, requestEditProfile.password)
+        api.enqueue(object : Callback<RegisterResponse> {
+            override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _editResponse.value = response.body()
+                    val newUser = UserModel(userId, requestEditProfile.name, requestEditProfile.password, user.value?.email ?: "")
+                    viewModelScope.launch {
+                        preferences.saveSession(newUser)
+                    }
+                } else {
+                    _editResponse.postValue(null)
+                }
             }
-            _isLoading.value = false
-        }
+
+            override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                _isLoading.value = false
+                _editResponse.value = null
+            }
+        })
     }
 
     fun logout() {

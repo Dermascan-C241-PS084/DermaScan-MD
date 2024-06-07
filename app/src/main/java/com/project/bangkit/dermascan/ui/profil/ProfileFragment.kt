@@ -31,9 +31,9 @@ class ProfileFragment : Fragment() {
         viewModel.user.observe(viewLifecycleOwner) { user ->
             binding.profileName.text = user.name
 //            token adlaah email
-            binding.profileEmail.text = user.token
+            binding.profileEmail.text = user.email
             binding.profileImage.text = user.name.firstOrNull()?.toUpperCase()?.toString() ?: ""
-            Log.d("ProfileFragment", "User name: ${user.name}, User email: ${user.token}")
+            Log.d("ProfileFragment", "User name: ${user.name}, User email: ${user.email}")
 
         }
 
@@ -56,9 +56,18 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.btnEditProfile.setOnClickListener {
-            Toast.makeText(requireContext(), "edit clicked", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), EditProfileActivity::class.java))
         }
+        viewModel.editResponse.observe(viewLifecycleOwner, { response ->
+            Log.d("ProfileFragment", "Edit profile response: $response")
+            if (response != null) {
+                Toast.makeText(requireContext(), "Profile updated successfully", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Failed to update profile", Toast.LENGTH_SHORT).show()
+            }
+        })
         binding.btnAboutUs.setOnClickListener {
             startActivity(Intent(requireContext(), AboutUsActivity::class.java))
         }

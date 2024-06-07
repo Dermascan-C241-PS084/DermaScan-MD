@@ -24,102 +24,114 @@
             android:src="@drawable/logo_team" />
     </RelativeLayout>
 
-    <!-- Profile Image CardView -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="80dp"
-        app:cardBackgroundColor="@color/color_primary"
-        app:cardCornerRadius="50dp"
-        app:cardElevation="4dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/header"
+        android:paddingTop="10dp">
 
-        <TextView
-            android:id="@+id/profile_image"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@color/white"
-            android:textSize="40sp"
-            android:text="@string/name"
-            android:gravity="center"
-            android:scaleType="centerCrop"
-            android:background="@drawable/transparent"
-            android:src="@drawable/baseline_person_24" />
-    </androidx.cardview.widget.CardView>
+            android:layout_height="wrap_content">
 
-    <!-- Name TextView -->
-    <TextView
-        android:id="@+id/profile_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/cardView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:text="Esa Surya Anggraini"
-        android:textSize="18sp"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
+            <!-- Profile Image CardView -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                app:cardBackgroundColor="@color/color_primary"
+                app:cardCornerRadius="50dp"
+                app:cardElevation="4dp">
 
-    <!-- Email TextView -->
-    <TextView
-        android:id="@+id/profile_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_name"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="anggrainiesa2@gmail.com"
-        android:textSize="16sp"
-        android:textColor="@android:color/darker_gray" />
+                <TextView
+                    android:id="@+id/profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/white"
+                    android:textSize="40sp"
+                    android:text="@string/name"
+                    android:gravity="center"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/transparent"
+                    android:src="@drawable/baseline_person_24" />
+            </androidx.cardview.widget.CardView>
 
-    <!-- Edit Profile Button -->
-    <Button
-        android:id="@+id/btn_edit_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profile_email"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginBottom="12dp"
-        android:background="@drawable/custom_button_bg"
-        android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="12dp"
-        android:text="Edit Profile"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white" />
+            <!-- Name TextView -->
+            <TextView
+                android:id="@+id/profile_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="Esa Surya Anggraini"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold" />
 
-    <!-- About Us Button -->
-    <Button
-        android:id="@+id/btn_about_us"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_edit_profile"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/custom_button_bg"
-        android:drawableRight="@drawable/ic_arrow_right"
-        android:padding="12dp"
-        android:text="About Us"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white" />
+            <!-- Email TextView -->
+            <TextView
+                android:id="@+id/profile_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="anggrainiesa2@gmail.com"
+                android:textSize="16sp"
+                android:textColor="@android:color/darker_gray" />
 
-    <!-- Logout Button -->
-    <Button
-        android:id="@+id/btn_logout_profile"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btn_about_us"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="26dp"
-        android:layout_marginRight="12dp"
-        android:background="@drawable/card_radius"
-        android:drawableRight="@drawable/ic_logout"
-        android:padding="12dp"
-        android:text="Logout"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/holo_blue_dark" />
+            <!-- Edit Profile Button -->
+            <Button
+                android:id="@+id/btn_edit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/profile_email"
+                android:layout_marginStart="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/custom_button_bg"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:padding="12dp"
+                android:text="Edit Profile"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/white" />
+
+            <!-- About Us Button -->
+            <Button
+                android:id="@+id/btn_about_us"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_edit_profile"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/custom_button_bg"
+                android:drawableRight="@drawable/ic_arrow_right"
+                android:padding="12dp"
+                android:text="About Us"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/white" />
+
+            <!-- Logout Button -->
+            <Button
+                android:id="@+id/btn_logout_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_about_us"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="26dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/card_radius"
+                android:drawableRight="@drawable/ic_logout"
+                android:padding="12dp"
+                android:text="Logout"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/holo_blue_dark" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

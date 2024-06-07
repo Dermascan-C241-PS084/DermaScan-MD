@@ -7,7 +7,11 @@ import com.project.bangkit.dermascan.response.LoginResponse
 import com.project.bangkit.dermascan.response.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
+import retrofit2.http.PUT
+import retrofit2.http.Path
 
 interface ApiService {
 
@@ -20,4 +24,12 @@ interface ApiService {
     fun login(
         @Body post: RequestLogin,
     ): Call<LoginResponse>
+
+    @FormUrlEncoded
+    @PUT("/editUsers/{userId}")
+    fun editProfile(
+        @Path("userId") userId: String,
+        @Field("name") name: String,
+        @Field("email") email: String
+    ): Call<RegisterResponse>
 }
