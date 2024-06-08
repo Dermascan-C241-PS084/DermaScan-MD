@@ -192,4 +192,9 @@
     Selain berbagai penyakit di atas, penyakit kulit yang umum terjadi, seperti jerawat, ketombe, dermatofibrosarkoma protuberans, dan reaksi alergi pada kulit terhadap obat-obatan, juga termasuk penyakit kulit yang tidak menular. \n\n
     Jika Anda mengalami keluhan pada kulit, terutama jika sudah berkepanjangan dan sulit untuk diatasi, janganlah ragu untuk berkonsultasi dengan dokter. Hal ini penting agar dokter bisa melakukan pemeriksaan dan memberikan penanganan yang tepat.
     </string>
+    <string name="change_your_password">Change Your Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="fill_your_new_password">Fill your new password</string>
+    <string name="save_change">Save Change</string>
 </resources>

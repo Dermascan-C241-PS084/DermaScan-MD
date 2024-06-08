@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.project.bangkit.dermascan.databinding.FragmentProfileBinding
 import com.project.bangkit.dermascan.ui.aboutus.AboutUsActivity
+import com.project.bangkit.dermascan.ui.changepassword.ChangePasswordActivity
 import com.project.bangkit.dermascan.ui.editprofil.EditProfileActivity
 
 class ProfileFragment : Fragment() {
@@ -73,6 +74,9 @@ class ProfileFragment : Fragment() {
         }
         binding.btnEditProfile.setOnClickListener{
             startActivity(Intent(requireContext(), EditProfileActivity::class.java))
+        }
+        binding.btnChangePassword.setOnClickListener{
+            startActivity(Intent(requireContext(), ChangePasswordActivity::class.java))
         }
 
     }

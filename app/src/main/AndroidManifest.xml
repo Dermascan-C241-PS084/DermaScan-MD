@@ -18,10 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DermaScan">
         <activity
+            android:name=".ui.changepassword.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-             />
         <activity
             android:name=".ui.article.Article5Activity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
