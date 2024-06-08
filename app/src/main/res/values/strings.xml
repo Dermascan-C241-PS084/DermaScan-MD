@@ -197,4 +197,8 @@
     <string name="new_password">New Password</string>
     <string name="fill_your_new_password">Fill your new password</string>
     <string name="save_change">Save Change</string>
+    <string name="your_email">Your Email</string>
+    <string name="enter_your_email">Enter Your email</string>
+    <string name="emailhead">Your Email</string>
+    <string name="password_updated">Password Updated</string>
 </resources>

@@ -30,6 +30,15 @@ interface ApiService {
     fun editProfile(
         @Path("userId") userId: String,
         @Field("name") name: String,
-        @Field("email") email: String
+        @Field("email") email: String,
     ): Call<RegisterResponse>
+
+    @FormUrlEncoded
+    @PUT("/editUsers/{userId}")
+    fun changePassword(
+        @Path("userId") userId: String,
+        @Field("password") password: String,
+    ): Call<RegisterResponse>
+
+
 }

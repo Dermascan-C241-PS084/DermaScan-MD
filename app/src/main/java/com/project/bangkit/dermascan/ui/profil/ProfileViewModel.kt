@@ -40,7 +40,30 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
                 _isLoading.value = false
                 if (response.isSuccessful) {
                     _editResponse.value = response.body()
-                    val newUser = UserModel(userId, requestEditProfile.name, requestEditProfile.password, user.value?.email ?: "")
+                    val newUser = UserModel(userId, requestEditProfile.name, requestEditProfile.password, user.value?.email ?: "", user.value?.token ?: "")
+                    viewModelScope.launch {
+                        preferences.saveSession(newUser)
+                    }
+                } else {
+                    _editResponse.postValue(null)
+                }
+            }
+
+            override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
+                _isLoading.value = false
+                _editResponse.value = null
+            }
+        })
+    }
+    fun changePassword(userId: String, requestEditProfile: RequestEditProfile) {
+        _isLoading.value = true
+        val api = ApiConfig.getApiService().changePassword(userId,requestEditProfile.password)
+        api.enqueue(object : Callback<RegisterResponse> {
+            override fun onResponse(call: Call<RegisterResponse>, response: Response<RegisterResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _editResponse.value = response.body()
+                    val newUser = UserModel(userId, user.value?.name ?: "", user.value?.email ?: "", requestEditProfile.password, user.value?.token ?: "")
                     viewModelScope.launch {
                         preferences.saveSession(newUser)
                     }
