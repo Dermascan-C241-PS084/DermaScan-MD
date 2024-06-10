@@ -59,7 +59,7 @@ class ScanActivity : AppCompatActivity() {
         binding.btnAnalyze.setOnClickListener {
             currentImageUri?.let { uri ->
                 showToast("Analyzing image...")
-                val imageFile = uriToFile(uri, this).reduceFileImage()
+                val imageile = uriToFile(uri, this).reduceFileImage()
 
             }
         }
@@ -70,6 +70,10 @@ class ScanActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun uploadImage(imageFile: File) {
+        // Upload the image to the server
     }
 
     private fun startGallery() {

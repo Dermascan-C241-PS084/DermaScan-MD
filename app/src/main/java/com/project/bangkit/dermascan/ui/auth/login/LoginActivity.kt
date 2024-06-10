@@ -7,6 +7,7 @@ import android.app.Dialog
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -42,37 +43,50 @@ class LoginActivity : AppCompatActivity() {
             validation()
         }
 
-        viewModel.value.observe(this) {
-            viewModel.saveSession(
-                UserModel(
-                    it.loginResult.userId,
-                    it.loginResult.name,
-                    it.loginResult.email,
-                    it.loginResult.password,
-                    it.loginResult.token
 
-                )
-            )
-            AlertDialog.Builder(this).apply {
-                setTitle("Selamat!")
-                setMessage("Anda berhasil login!")
-                setPositiveButton("Lanjut") { _, _ ->
-                    val intent = Intent(context, MainActivity::class.java)
-                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-                    startActivity(intent)
-                    finish()
+                viewModel.value.observe(this) { loginResponse ->
+                    if (loginResponse.error) {
+                        // Log the error message
+                        Log.d("LoginError", loginResponse.message)
+
+                        // Show the error message from the server
+                        Toast.makeText(
+                            this,
+                            loginResponse.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        loginResponse.loginResult?.let {
+                            viewModel.saveSession(
+                                UserModel(
+                                    it.userId,
+                                    it.name,
+                                    it.email,
+                                    it.password,
+                                    it.token
+                                )
+                            )
+                            AlertDialog.Builder(this).apply {
+                                setTitle("Selamat!")
+                                setMessage("Anda berhasil login!")
+                                setPositiveButton("Lanjut") { _, _ ->
+                                    val intent = Intent(context, MainActivity::class.java)
+                                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                                    startActivity(intent)
+                                    finish()
+                                }
+                                create()
+                                show()
+                            }
+                        }
+                    }
                 }
-                create()
-                show()
-            }
-
-        }
 
         viewModel.loginStatus.observe(this) { isSuccess ->
             if (!isSuccess) {
                 Toast.makeText(
                     this,
-                    "Gagal login coba periksa Email atau Password anda",
+                    "Check Your Connection",
                     Toast.LENGTH_SHORT
                 ).show()
             }

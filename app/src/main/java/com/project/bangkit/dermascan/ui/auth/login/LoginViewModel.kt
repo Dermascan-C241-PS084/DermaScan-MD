@@ -1,5 +1,4 @@
 
-
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,6 +18,8 @@ class LoginViewModel(private val repository: UserRepository) : ViewModel() {
 
     private val _loginStatus = MutableLiveData<Boolean>()
     val loginStatus: LiveData<Boolean> = _loginStatus
+
+    val errorMessage = MutableLiveData<String>()
 
     private val value_= MutableLiveData<LoginResponse>()
     val value: LiveData<LoginResponse> = value_
@@ -44,16 +45,14 @@ class LoginViewModel(private val repository: UserRepository) : ViewModel() {
                 response: Response<LoginResponse>,
             ) {
                 _isLoading.value = false
-                if (response.isSuccessful) {
+                if (response.isSuccessful && response.body() != null) {
                     value_.value = response.body()
                     _loginStatus.value = true
-
                 } else {
-                    Log.e("Register User", "onFailure: ${response.message()}")
+                    errorMessage.value = "Check your email and password or your connection"
                     _loginStatus.value = false
                 }
             }
-
             override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.e("Login User", "onFailure: ${t.message.toString()}")

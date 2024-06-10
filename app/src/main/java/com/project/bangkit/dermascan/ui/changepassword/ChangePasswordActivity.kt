@@ -1,6 +1,8 @@
 package com.project.bangkit.dermascan.ui.changepassword
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -43,12 +45,21 @@ class ChangePasswordActivity : AppCompatActivity() {
                 // Display error message
                 Toast.makeText(this, "New password cannot be the same as the current password", Toast.LENGTH_SHORT).show()
             } else {
-                // Update the password
-                val requestEditProfile = RequestEditProfile(currentPassword ?: "", newPassword)
-                viewModel.changePassword(viewModel.user.value?.userId ?: "", requestEditProfile)
-                // Add log
-                Log.d("ChangePasswordActivity", "Password updated successfully")
-                showCustomDialogPass()
+                // Show loading
+                binding.progressBar.visibility = View.VISIBLE
+
+                // Delay for 2 seconds (2000 milliseconds)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    // Update the password
+                    val requestEditProfile = RequestEditProfile(currentPassword ?: "", newPassword)
+                    viewModel.changePassword(viewModel.user.value?.userId ?: "", requestEditProfile)
+                    // Add log
+                    Log.d("ChangePasswordActivity", "Password updated successfully")
+                    showCustomDialogPass()
+
+                    // Hide loading
+                    binding.progressBar.visibility = View.GONE
+                }, 2000)
             }
         }
 
