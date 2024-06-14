@@ -2,15 +2,11 @@ package com.project.bangkit.dermascan.ui.article
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.project.bangkit.dermascan.databinding.ActivityArticle5Binding
+import com.project.bangkit.dermascan.R
 
 class Article5Activity : AppCompatActivity() {
-    private lateinit var binding: ActivityArticle5Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityArticle5Binding.inflate(layoutInflater)
-        binding.btnBack.setOnClickListener {
-            finish()
-        }
+        setContentView(R.layout.activity_article5)
     }
 }
