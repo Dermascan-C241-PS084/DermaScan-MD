@@ -1,4 +1,4 @@
-package com.project.bangkit.dermascan.utils
+package com.project.bangkit.dermascan.ui
 
 import android.content.ContentValues
 import android.content.Context
@@ -11,6 +11,7 @@ import android.os.Environment
 import android.provider.MediaStore
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import com.project.bangkit.dermascan.BuildConfig
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -29,7 +30,7 @@ fun getImageUri(context: Context): Uri {
         val contentValues = ContentValues().apply {
             put(MediaStore.MediaColumns.DISPLAY_NAME, "$timeStamp.jpg")
             put(MediaStore.MediaColumns.MIME_TYPE, "image/jpeg")
-            put(MediaStore.MediaColumns.RELATIVE_PATH, "Pictures/MyCamera/")
+            put(MediaStore.MediaColumns.RELATIVE_PATH, "Pictures/DermaScan/")
         }
         uri = context.contentResolver.insert(
             MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
@@ -42,11 +43,11 @@ fun getImageUri(context: Context): Uri {
 
 private fun getImageUriForPreQ(context: Context): Uri {
     val filesDir = context.getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-    val imageFile = File(filesDir, "/MyCamera/$timeStamp.jpg")
+    val imageFile = File(filesDir, "/DermaScan/$timeStamp.jpeg")
     if (imageFile.parentFile?.exists() == false) imageFile.parentFile?.mkdir()
     return FileProvider.getUriForFile(
         context,
-        "com.meone.latihanimageclassification.fileprovider",
+        "${BuildConfig.APPLICATION_ID}.fileprovider",
         imageFile
     )
     //content://com.dicoding.picodiploma.mycamera.fileprovider/my_images/MyCamera/20230825_133659.jpg
@@ -66,7 +67,7 @@ fun uriToFile(imageUri: Uri, context: Context): File {
     while (inputStream.read(buffer).also { length = it } > 0) outputStream.write(buffer, 0, length)
     outputStream.close()
     inputStream.close()
-    return myFile
+    return myFile.reduceFileImage() // Panggil reduceFileImage() di sini
 }
 
 fun File.reduceFileImage(): File {

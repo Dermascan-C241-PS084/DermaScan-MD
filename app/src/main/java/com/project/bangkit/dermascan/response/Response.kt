@@ -1,6 +1,7 @@
 package com.project.bangkit.dermascan.response
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class RegisterResponse(
     @field:SerializedName("error")
@@ -58,4 +59,17 @@ data class Result(
     val message: String
 )
 
+data class ResponseUploadImage(
+    val data: Data,
+    val message: String
+)
+
+data class Data(
+    val result: String,
+    val createdAt: String,
+    val confidenceScore: Any,
+    val isAboveThreshold: Boolean,
+    val imageUrl: String,
+    val id: String
+) : Serializable
 

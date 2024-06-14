@@ -5,12 +5,16 @@ import com.project.bangkit.dermascan.request.RequestLogin
 import com.project.bangkit.dermascan.request.RequestRegister
 import com.project.bangkit.dermascan.response.LoginResponse
 import com.project.bangkit.dermascan.response.RegisterResponse
+import com.project.bangkit.dermascan.response.ResponseUploadImage
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.PUT
+import retrofit2.http.Part
 import retrofit2.http.Path
 
 interface ApiService {
@@ -39,6 +43,12 @@ interface ApiService {
         @Path("userId") userId: String,
         @Field("password") password: String,
     ): Call<RegisterResponse>
+
+    @Multipart
+    @POST("/predict")
+    fun uploadImage(
+        @Part image: MultipartBody.Part
+    ): Call<ResponseUploadImage>
 
 
 }
