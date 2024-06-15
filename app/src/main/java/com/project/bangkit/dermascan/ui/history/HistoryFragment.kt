@@ -28,7 +28,7 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // Create an adapter with the list of results
-        val adapter = HistoryAdapter(detectionResults)
+        val adapter = HistoryAdapter(detectionResults.reversed())
 
         // Set the adapter for the RecyclerView
         binding.rvHistory.adapter = adapter
