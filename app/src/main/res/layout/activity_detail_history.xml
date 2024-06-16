@@ -169,7 +169,7 @@
                         android:textSize="14sp"
                         android:textColor="@color/black"
                         android:justificationMode="inter_word"
-                        android:gravity="center" />
+                        android:gravity="start" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

@@ -108,22 +108,52 @@ class ResultActivity : AppCompatActivity() {
 
         // Set advice based on result
         val advice = when (data.result) {
-            "chickenpox" -> "Chickenpox is a viral infection causing itchy blisters. Rest, stay hydrated, avoid scratching to prevent secondary infections, and isolate infected individuals to prevent spread.\n" +
-                    "\n"
-            "cellulitis" -> "Cellulitis is a bacterial infection causing redness, swelling, and pain. Keep the infected area clean and take antibiotics as prescribed. Seek medical help immediately if symptoms worsen or fever develops.\n" +
-                    "\n"
-            "impetigo" -> "Impetigo is a highly contagious skin infection with red, crusted sores. Keep the infected area clean, use antibiotics as directed, avoid sharing personal items, and practice good hygiene.\n"+
-                    "\n"
-            "athlete's foot" -> "Athlete's foot is a fungal infection causing itching and cracked skin on the feet. Keep feet clean and dry, use antifungal cream, and avoid walking barefoot in public places.\n"+
-                    "\n"
-            "ringworm" -> "Ringworm is a fungal infection forming red, ring-shaped rashes. Keep the affected area clean and dry, use antifungal cream, avoid scratching, and practice good hygiene.\n"+
-                    "\n"
-            "nail fungus" -> "Nail fungus causes discolored, thickened, and brittle nails. Maintain foot hygiene, use antifungal treatments as prescribed, and wear breathable shoes.\n"+
-                    "\n"
+            "chickenpox" -> """
+                - Consult a healthcare provider for antiviral medication if necessary.
+                - Avoid scratching the blisters to prevent scarring and secondary infection.
+                - Use calamine lotion or oatmeal baths to soothe itching.
+                - Stay hydrated and rest well to support recovery.
+            """.trimIndent()
+            "cellulitis" -> """
+                - Seek medical attention promptly to receive antibiotics.
+                - Keep the affected area clean and dry.
+                - Elevate the affected limb to reduce swelling.
+                - Avoid scratching or touching the infected area to prevent the spread.
+            """.trimIndent()
+            "impetigo" -> """
+                - Maintain good hygiene by washing hands frequently.
+                - Avoid close contact with others to prevent spreading the infection.
+                - Keep the infected area covered with a clean bandage.
+            """.trimIndent()
+            "athlete's foot" -> """
+                - Use over-the-counter antifungal creams or powders.
+                - Keep feet clean and dry, especially between the toes.
+                -  Wear breathable, well-ventilated shoes and moisture-wicking socks.
+                - Avoid walking barefoot in public areas like locker rooms and pools.
+
+            """.trimIndent()
+            "ringworm" -> """
+                - Use over-the-counter antifungal creams or ointments.
+                - Keep the affected area clean and dry.
+                - Avoid sharing personal items like towels or clothing.
+                - Wash bedding and clothing frequently to prevent reinfection.
+
+            """.trimIndent()
+            "nail fungus" -> """
+                - Apply topical antifungal treatments or take oral antifungal medication as prescribed.
+                - Trim and clean nails regularly.
+                - Avoid sharing nail clippers or footwear.
+                - Keep nails dry and avoid prolonged exposure to moist environments.
+
+            """.trimIndent()
             "cutaneous larva migrans" -> "Cutaneous larva migrans is caused by hookworm larvae burrowing into the skin. Avoid walking barefoot in at-risk areas, treat with prescription antiparasitic medication, keep the infected area clean, and avoid scratching.\n"+
                     "\n"
-            "shingles" -> "Shingles causes painful rash and blisters on one side of the body. Treat with prescription antiviral medication, keep the rash clean and covered, and avoid contact with vulnerable individuals until the rash crusts over.\n"+
-                    "\n"
+            "shingles" -> """
+               - Consult a healthcare provider for appropriate antiparasitic treatment.
+               - Avoid walking barefoot on sandy or moist soil where the parasite is common.
+               - Keep the affected area clean and avoid scratching.
+               - Use insect repellent and wear protective clothing in areas where the parasite is prevalent.
+            """.trimIndent()
             else -> "Tetap Pertahankan gaya hidup sehat anda"
         }
         binding.adviceText.text = advice

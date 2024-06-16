@@ -111,10 +111,19 @@
                         android:id="@+id/advice_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:text="Advice "
                         android:textColor="@color/black"
-                        android:text="Advice"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/advice_save"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Save Predict To Check Your Advice On HistoryDetail "
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="" />
 
                     <TextView
                         android:id="@+id/advice_text"
@@ -124,7 +133,7 @@
                         android:justificationMode="inter_word"
                         android:textAlignment="viewStart"
                         android:textColor="@color/black"
-                        android:maxLines="2"
+                        android:maxLines="0"
                         android:text="@string/advice_detection" />
 
                 </LinearLayout>
